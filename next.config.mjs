@@ -1,11 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: 'export',
-    images: {
-        unoptimized: false,
-    },
-    basePath: '/second-diamond',
-    assetPrefix: '/second-diamond/',
-};
+const nextConfig = {};
 
 export default nextConfig;
