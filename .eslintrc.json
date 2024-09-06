@@ -1,0 +1,118 @@
+{
+  "extends": [
+    "airbnb-base",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "ignorePatterns": [
+    "!src/",
+    "!src/**"
+  ],
+  "rules": {
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": [],
+        "depth": 3,
+        "assert": "either"
+      }
+    ],
+    "semi": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.js",
+        "**/*.jsx"
+      ],
+      "plugins": [
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort"
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "project": "./jsconfig.json"
+      },
+      "rules": {
+        "semi": "off",
+        "@typescript-eslint/semi": [
+          "off"
+        ],
+        "prettier/prettier": [
+          "error",
+          {
+            "semi": false,
+            "singleQuote": true,
+            "endOfLine": "auto"
+          }
+        ],
+        "import/extensions": "off",
+        "react/function-component-definition": "off",
+        "react/destructuring-assignment": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ],
+        "import/prefer-default-export": "off",
+        "simple-import-sort/exports": "error",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              [
+                "builtin",
+                "external",
+                "internal"
+              ]
+            ],
+            "newlines-between": "always",
+            "pathGroups": [
+              {
+                "pattern": "*.css",
+                "patternOptions": {
+                  "matchBase": true
+                },
+                "group": "unknown",
+                "position": "after"
+              },
+              {
+                "pattern": "@/**",
+                "group": "parent",
+                "position": "before"
+              }
+            ]
+          }
+        ],
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "tailwindcss/no-custom-classname": "off",
+        "react/jsx-filename-extension": "off",
+        "jsx-a11y/label-has-associated-control": "off"
+      }
+    }
+  ]
+}
