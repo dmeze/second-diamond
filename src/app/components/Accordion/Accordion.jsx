@@ -4,13 +4,7 @@ import { useState } from 'react'
 
 import { ArrowDown, ArrowUp } from '../Icons/Icons'
 
-const Accordion = ({
-  title,
-  icon,
-  content,
-  isOpenInitialState = false,
-  shouldPay = true,
-}) => {
+const Accordion = ({ title, icon, children, isOpenInitialState = false }) => {
   const [isOpen, setIsOpen] = useState(isOpenInitialState)
 
   const handleAccordionClick = () => {
@@ -26,7 +20,7 @@ const Accordion = ({
       >
         <div className="flex items-center space-x-2">
           <span className="text-pink-500">{icon}</span>
-          <h2 className="text-lg font-light">{title}</h2>
+          <h2 className="text-left text-lg font-light">{title}</h2>
         </div>
         <span className="text-gray-300">
           {isOpen ? <ArrowUp /> : <ArrowDown />}
@@ -39,22 +33,7 @@ const Accordion = ({
             ease-in-out ${isOpen ? 'max-h-min' : 'max-h-0 overflow-hidden'}
         `}
       >
-        <div className="rounded-b-lg bg-[#282828] px-4">{content}</div>
-        {shouldPay && (
-          <div className="flex h-[70px] w-full items-center justify-between rounded-b-lg px-4">
-            <span className="text-sm text-white">
-              Ready to dive deeper into your true self? Unlock for just $7.99
-            </span>
-            <button
-              type="button"
-              className="h-[40px] w-[100px] rounded-md bg-white px-4 py-2 text-transparent"
-            >
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-                Explore
-              </span>
-            </button>
-          </div>
-        )}
+        {children}
       </div>
     </div>
   )
