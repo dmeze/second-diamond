@@ -9,7 +9,8 @@ const BackgroundVideo = ({ children }) => (
         autoPlay
         loop
         muted
-        className="absolute left-0 top-0 size-full object-cover"
+        playsInline
+        className="pointer-events-none absolute left-0 top-0 size-full object-cover"
       >
         <source src="/background.webm" type="video/webm" />
         Your browser does not support the video tag.
