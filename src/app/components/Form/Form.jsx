@@ -40,8 +40,6 @@ const Form = async ({ birthday, gender }) => {
             style={{
               background: 'rgba(255, 255, 255, 0.01)',
               backdropFilter: 'blur(1px)',
-              WebkitAppearance: 'none',
-              minWidth: '90%',
             }}
           />
           <label

@@ -43,8 +43,9 @@ module.exports = {
         'input[type="date"]': {
           display: 'block',
           'min-width': '90%',
-          '-webkit-appearance': 'textfield',
-          '-moz-appearance': 'textfield',
+          '-webkit-appearance': 'none',
+          '-moz-appearance': 'none',
+          '-webkit-min-logical-width': 'calc(100% - 16px)',
           appearance: 'none',
         },
       })
