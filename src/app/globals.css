@@ -35,6 +35,6 @@ body {
 @supports (-webkit-touch-callout: none) {
   .ios-input-date {
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 0 12px;
   }
 }

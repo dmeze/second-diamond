@@ -34,7 +34,9 @@ const Form = async ({ birthday, gender }) => {
             min-w-36
             appearance-none rounded-full border-[0.6px] border-solid
             border-slate-600 bg-transparent
-            p-2 px-8 text-transparent
+            p-2 px-8 text-center
+            leading-[40px]
+            text-transparent
             transition-all
             valid:text-white focus:border-[#CF4B92] focus:text-white
             focus:outline-none
