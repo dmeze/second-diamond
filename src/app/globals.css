@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .ios-input-date {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+}

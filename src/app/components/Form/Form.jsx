@@ -26,18 +26,18 @@ const Form = async ({ birthday, gender }) => {
             defaultValue={birthday}
             required
             max={new Date().toISOString().split('T')[0]}
-            placeholder="Enter Your Birthday"
             className="
+            ios-input-date
             peer
             h-[60px]
             w-full
             min-w-36
-            appearance-none
-            rounded-full border-[0.6px] border-solid border-slate-600
-            bg-transparent p-2
-            px-8 text-transparent transition-all
-            valid:text-white
-            focus:border-[#CF4B92] focus:text-white focus:outline-none
+            appearance-none rounded-full border-[0.6px] border-solid
+            border-slate-600 bg-transparent
+            p-2 px-8 text-transparent
+            transition-all
+            valid:text-white focus:border-[#CF4B92] focus:text-white
+            focus:outline-none
             "
             style={{
               background: 'rgba(255, 255, 255, 0.01)',
