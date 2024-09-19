@@ -26,8 +26,9 @@ const Form = async ({ birthday, gender }) => {
             defaultValue={birthday}
             required
             max={new Date().toISOString().split('T')[0]}
+            placeholder="Enter Your Birthday"
             className="
-            peer h-[60px] w-full
+            peer h-[60px] w-max
             rounded-full border-[0.6px] border-solid border-slate-600
             bg-transparent p-2
             px-8 text-transparent transition-all
