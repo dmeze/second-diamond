@@ -30,7 +30,7 @@ const Form = async ({ birthday, gender }) => {
             className="
             peer
             h-[60px]
-            min-w-full appearance-none
+            appearance-none
             rounded-full border-[0.6px] border-solid border-slate-600
             bg-transparent p-2
             px-8 text-transparent transition-all
@@ -41,6 +41,7 @@ const Form = async ({ birthday, gender }) => {
               background: 'rgba(255, 255, 255, 0.01)',
               backdropFilter: 'blur(1px)',
               WebkitAppearance: 'none',
+              minWidth: '90%',
             }}
           />
           <label

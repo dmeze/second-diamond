@@ -42,7 +42,7 @@ module.exports = {
         },
         'input[type="date"]': {
           display: 'block',
-          'min-height': '1.2em',
+          'min-width': '90%',
           '-webkit-appearance': 'textfield',
           '-moz-appearance': 'textfield',
           appearance: 'none',
