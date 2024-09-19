@@ -28,7 +28,9 @@ const Form = async ({ birthday, gender }) => {
             max={new Date().toISOString().split('T')[0]}
             placeholder="Enter Your Birthday"
             className="
-            peer h-[60px] w-max
+            peer
+            h-[60px]
+            min-w-full appearance-none
             rounded-full border-[0.6px] border-solid border-slate-600
             bg-transparent p-2
             px-8 text-transparent transition-all
@@ -45,8 +47,9 @@ const Form = async ({ birthday, gender }) => {
             htmlFor="birthday"
             className="
             absolute
-            left-4 top-7 w-max -translate-y-1/2
-            scale-100 text-sm text-[#CDCFDF] transition-all
+            left-4
+            top-7 w-max -translate-y-1/2 scale-100
+            appearance-none text-sm text-[#CDCFDF] transition-all
             peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100
             peer-valid:-translate-x-6 peer-valid:-translate-y-12
             peer-valid:scale-75 peer-focus:-translate-x-6 peer-focus:-translate-y-12

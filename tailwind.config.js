@@ -41,7 +41,9 @@ module.exports = {
           '-webkit-appearance': 'none',
         },
         'input[type="date"]': {
-          '-webkit-appearance': 'none',
+          display: 'block',
+          'min-height': '1.2em',
+          '-webkit-appearance': 'textfield',
           '-moz-appearance': 'textfield',
           appearance: 'none',
         },
