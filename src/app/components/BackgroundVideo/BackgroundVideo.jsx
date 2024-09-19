@@ -16,9 +16,9 @@ const BackgroundVideo = ({ children }) => (
         Your browser does not support the video tag.
       </video>
     </div>
-    <div className="flex size-full items-center justify-center gap-16 px-12">
+    <div className="flex size-full items-center justify-center gap-16 md:px-12">
       <div className="relative flex justify-center  ">
-        <div className="absolute right-[-60%] top-[-175%] flex size-[800px] items-center justify-center md:right-auto">
+        <div className="absolute -right-1/2 top-[-175%] flex size-[800px] items-center justify-center md:right-auto">
           <Image
             src="/circle.png"
             alt="Circular Background"

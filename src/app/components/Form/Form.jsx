@@ -28,15 +28,16 @@ const Form = async ({ birthday, gender }) => {
             max={new Date().toISOString().split('T')[0]}
             className="
             peer h-[60px] w-full
-            rounded-full border-[0.6px] border-solid
-            border-slate-600 bg-transparent p-2 px-3
-            text-transparent transition-all
-            valid:text-white focus:border-[#CF4B92] focus:text-white
-            focus:outline-none
+            rounded-full border-[0.6px] border-solid border-slate-600
+            bg-transparent p-2
+            px-8 text-transparent transition-all
+            valid:text-white
+            focus:border-[#CF4B92] focus:text-white focus:outline-none
             "
             style={{
               background: 'rgba(255, 255, 255, 0.01)',
               backdropFilter: 'blur(1px)',
+              WebkitAppearance: 'none',
             }}
           />
           <label

@@ -6,7 +6,7 @@ const ScrollToSections = ({ birthday, gender, confirmationId }) => {
   useEffect(() => {
     const section = document.getElementById('sections')
     if (section && ((birthday && gender) || confirmationId)) {
-      section.scrollIntoView({ behavior: 'smooth' })
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [birthday, gender, confirmationId])
 

@@ -44,14 +44,10 @@ export const getAdditionalNumbers = (birthDate) => {
 
   const allDigits = [...year, ...month, ...day, ...additionalDigits]
 
-  const countOfOnes = allDigits.reduce(
-    (acc, digit) => acc + (digit === '1' ? 1 : 0),
-    0,
-  )
-  const countOfTwos = allDigits.reduce(
-    (acc, digit) => acc + (digit === '2' ? 1 : 0),
-    0,
-  )
+  const countOfOnes =
+    allDigits.reduce((acc, digit) => acc + (digit === '1' ? 1 : 0), 0) || 1
+  const countOfTwos =
+    allDigits.reduce((acc, digit) => acc + (digit === '2' ? 1 : 0), 0) || 1
 
   return {
     additionalNumbers: `${firstAdditional}.${secondAdditional}.${thirdAdditional}.${fourthAdditional}`,
