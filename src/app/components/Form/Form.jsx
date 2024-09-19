@@ -31,7 +31,7 @@ const Form = async ({ birthday, gender }) => {
             peer
             h-[60px]
             w-full
-            min-w-[155px]
+            min-w-36
             appearance-none
             rounded-full border-[0.6px] border-solid border-slate-600
             bg-transparent p-2
