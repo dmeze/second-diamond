@@ -162,7 +162,7 @@ export const getAccordionContentText = ({
     const textByKey =
       textKey in textByFile ? textByFile[textKey] : textByFile[altTextKey]
 
-    return textByKey[textType] || textByKey[altKey]
+    return textByKey[textType] || textByKey[altKey][textType]
   }
 
   return ''
