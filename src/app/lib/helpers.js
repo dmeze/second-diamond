@@ -156,13 +156,15 @@ export const getAccordionContentText = ({
     brandLost,
     experience: experienceFile,
   }
-  const textByFile = files[fileKey]
+
+  const textByFile = files[fileKey] ?? null
 
   if (textByFile) {
-    const textByKey =
-      textKey in textByFile ? textByFile[textKey] : textByFile[altTextKey]
+    const textByKey = textByFile[textKey] ?? textByFile[altTextKey] ?? null
 
-    return textByKey[textType] || textByKey[altKey][textType]
+    if (textByKey) {
+      return textByKey[textType] ?? textByKey[altKey]?.[textType] ?? ''
+    }
   }
 
   return ''
