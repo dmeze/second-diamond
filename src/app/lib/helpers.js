@@ -140,6 +140,7 @@ export const getAccordionContentText = ({
   altTextKey,
 }) => {
   const textType = isShort ? 'short' : 'all'
+
   const files = {
     personalityMain,
     hiddenPulse,
