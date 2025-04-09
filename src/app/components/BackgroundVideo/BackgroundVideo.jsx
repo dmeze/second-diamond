@@ -17,7 +17,14 @@ const BackgroundVideo = ({ children }) => {
   }, [])
 
   return (
-    <div className="relative z-0 h-screen w-full bg-black">
+    <div
+      className="relative z-0 h-screen w-full"
+      style={{
+        backgroundImage: `url('/backgroundImage.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="absolute left-0 top-0 -z-10 size-full">
         {!isLowPowerMode ? (
           <video
