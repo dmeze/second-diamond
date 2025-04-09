@@ -140,6 +140,7 @@ export const getAccordionContentText = ({
   altTextKey,
 }) => {
   const textType = isShort ? 'short' : 'all'
+
   const files = {
     personalityMain,
     hiddenPulse,
@@ -156,13 +157,15 @@ export const getAccordionContentText = ({
     brandLost,
     experience: experienceFile,
   }
-  const textByFile = files[fileKey]
+
+  const textByFile = files[fileKey] ?? null
 
   if (textByFile) {
-    const textByKey =
-      textKey in textByFile ? textByFile[textKey] : textByFile[altTextKey]
+    const textByKey = textByFile[textKey] ?? textByFile[altTextKey] ?? null
 
-    return textByKey[textType] || textByKey[altKey][textType]
+    if (textByKey) {
+      return textByKey[textType] ?? textByKey[altKey]?.[textType] ?? ''
+    }
   }
 
   return ''
@@ -171,28 +174,32 @@ export const getAccordionContentText = ({
 export const getPaymentLink = async (birthday, gender) => {
   const headersList = headers()
   const referer = headersList.get('referer')
-  const url = new URL(referer)
-  const { origin } = url
+  if (referer) {
+    const url = new URL(referer)
+    const { origin } = url
 
-  const response = await fetch('https://api.stripe.com/v1/payment_links', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams({
-      'line_items[0][price]': process.env.STRIPE_PRODUCT_ID,
-      'line_items[0][quantity]': '1',
-      'metadata[birthday]': birthday,
-      'metadata[gender]': gender,
-      'after_completion[type]': 'redirect',
-      'after_completion[redirect][url]': `${origin}?confirmationId={CHECKOUT_SESSION_ID}`,
-    }),
-  })
+    const response = await fetch('https://api.stripe.com/v1/payment_links', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        'line_items[0][price]': process.env.STRIPE_PRODUCT_ID,
+        'line_items[0][quantity]': '1',
+        'metadata[birthday]': birthday,
+        'metadata[gender]': gender,
+        'after_completion[type]': 'redirect',
+        'after_completion[redirect][url]': `${origin}?confirmationId={CHECKOUT_SESSION_ID}`,
+      }),
+    })
 
-  const { url: paymentLink } = (await response.json()) || {}
+    const { url: paymentLink } = (await response.json()) || {}
 
-  return paymentLink
+    return paymentLink
+  }
+
+  return ''
 }
 
 export const getCheckoutSession = async (confirmationId) => {
